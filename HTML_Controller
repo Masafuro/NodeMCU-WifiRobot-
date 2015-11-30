@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<title>HTMLコントローラ</title>
+<!--
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+-->
+
+
+
+
+
+</head>
+<body onContextmenu="return false">
+	<div class="container" role="main">
+
+
+
+		<button type="submit" id="l180" target="_blank"><img src="Tapbar.png"></button>
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+
+		<button type="submit" id="r180" target="_blank"><img src="Tapbar.png"></button>
+		<br>
+		<button type="submit" id="l135" target="_blank"><img src="Tapbar.png"></button>
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+
+		<button type="submit" id="r135" target="_blank"><img src="Tapbar.png"></button>
+		<br>
+		<button type="submit" id="l90" target="_blank"><img src="Tapbar.png"></button>
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+
+		<button type="submit" id="r90" target="_blank"><img src="Tapbar.png"></button>
+		<br>
+		<button type="submit" id="l45" target="_blank"><img src="Tapbar.png"></button>
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+
+		<button type="submit" id="r45" target="_blank"><img src="Tapbar.png"></button>
+		<br>
+		<button type="submit" id="l0" target="_blank"><img src="Tapbar.png"></button>
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+		<img src="clear2.png">
+
+		<button type="submit" id="r0" target="_blank"><img src="Tapbar.png"></button>
+		<br>
+
+
+
+
+	<br>
+
+
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<button type="submit" id="up" target="_blank"><img src="CrossKey.png"></button>
+	<br>
+	<button type="submit" id="left" target="_blank"><img src="CrossKey.png"></button>
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<img src="clear2.png">
+	<button type="submit" id="right" target="_blank"><img src="CrossKey.png"></button>
+<br>
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<img src="clear2.png">
+<button type="submit" id="down" target="_blank"><img src="CrossKey.png"></button>
+
+</div>
+
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+	//Connect to jumpwire.io server
+	var socket = io('https://socket.jumpwire.io');
+
+	$('#up').bind('touchstart', function() {
+		socket.emit('f', ['A', 1] );
+		});
+	$('#up').bind('touchend', function() {
+		socket.emit('f', ['A', 0] );
+	});
+
+	$('#left').bind('touchstart', function() {
+		socket.emit('f', ['A', 2] );
+		});
+	$('#left').bind('touchend', function() {
+		socket.emit('f', ['A', 0] );
+	});
+
+	$('#right').bind('touchstart', function() {
+		socket.emit('f', ['A', 3] );
+		});
+	$('#right').bind('touchend', function() {
+		socket.emit('f', ['A', 0] );
+	});
+
+	$('#down').bind('touchstart', function() {
+		socket.emit('f', ['A', 4] );
+		});
+	$('#down').bind('touchend', function() {
+		socket.emit('f', ['A', 0] );
+	});
+
+	$('#l180').bind('touchstart', function() {
+		socket.emit('f', ['P', 180] );
+		});
+	$('#l135').bind('touchstart', function() {
+			socket.emit('f', ['P', 135] );
+			});
+	$('#l90').bind('touchstart', function() {
+				socket.emit('f', ['P', 90] );
+				});
+	$('#l45').bind('touchstart', function() {
+					socket.emit('f', ['P', 45] );
+					});
+	$('#l0').bind('touchstart', function() {
+					socket.emit('f', ['P', 0] );
+					});
+
+	$('#r180').bind('touchstart', function() {
+						socket.emit('f', ['Q', 0] );
+						});
+	$('#r135').bind('touchstart', function() {
+							socket.emit('f', ['Q', 45] );
+							});
+	$('#r90').bind('touchstart', function() {
+								socket.emit('f', ['Q', 90] );
+								});
+	$('#r45').bind('touchstart', function() {
+									socket.emit('f', ['Q', 135] );
+									});
+	$('#r0').bind('touchstart', function() {
+									socket.emit('f', ['Q', 180] );
+									});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
